@@ -1,0 +1,24 @@
+.aside-modal {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 50%;
+    right: 0;
+    top: 0;
+    z-index: 200;
+    background-color: #fff;
+    padding: 100px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+  
+.open {
+    transform: translateY(0);
+}
+
+.close {
+    transform: translateY(-100%);
+}

@@ -1,38 +1,43 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import PublicRoutes from './router';
+import MenuModal from './components/MenuModal/MenuModal';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Layout from './components/Layout/Layout';
+
 import './App.css';
 
 class App extends Component {
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      isPaneOpen: false,
+    }
+  }
+
+  toggleMenu = () => {
+    this.setState({
+      isPaneOpen: !this.state.isPaneOpen
+    })
+  }
+
   render() {
     return (
-      <div className="App">
-        <header>
-          <div className="logo">
-            <span className="bold">M / W / M</span>
-          </div>
-          <div className="menu">
-            <span></span>
-            <span className="short"></span>
-          </div>
-        </header>
-        <div className="content">
-          <div className="left">
-            <span className="hello">Hello -</span>
-            <h1>
-              I'm <strong>Michael W McDevitt</strong> a passionate <strong>Software Engineer</strong> & an eye for <strong>Minimalistic Design</strong>.
-            </h1>
-            <h1>I'm based in <strong>NYC</strong>, currently working <strong>Nowhere</strong>. But, I'd love to work with <strong>You</strong>. So, let's <strong>Connect</strong>.</h1>
-          </div>
-        </div>
-        <footer>
-          <div className="footer-links">
-            <ul>
-              <li><a className="github" href="https://www.github.com/mmcdevitt" target="_blank">github</a></li>
-              <li><a className="linkedin" href="https://www.linkedin.com/in/michaelwmcdevitt" target="_blank">linkedin</a></li>
-              <li><a className="linkedin" href="mailto:michael.w.mcdevitt@gmail.com">email</a></li>
-            </ul>
-          </div>
-        </footer>
-      </div>
+      <Layout>
+        <MenuModal showModal={this.state.isPaneOpen} back={this.toggleMenu}>
+          <ul onClick={this.toggleMenu} className="menu-links">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Me</Link></li>
+            <li><Link to="/projects">Projects</Link></li>
+            <li><a href="">Contact</a></li>
+          </ul>
+        </MenuModal>
+        <Header showModal={this.state.isPaneOpen} toggleMenu={this.toggleMenu}/>
+        <PublicRoutes />
+        <Footer />
+      </Layout>
     );
   }
 }
