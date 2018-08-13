@@ -14,7 +14,7 @@ const projects = [
     name: 'Thrice', 
     description: "Created a peer-to-peer e-commerce platform for men's clothing with Ruby on Rails",
     stack: 'ruby, ruby on rails, postgreSQL',
-    link: 'http://thrice.herokuapp.com',
+    link: 'http://www.thriceclothing.com',
     github: 'https://github.com/mmcdevitt/thrice',
     deployed: true,
     img: `${process.env.PUBLIC_URL}/thrice.jpg`,
