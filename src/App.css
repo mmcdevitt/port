@@ -167,6 +167,11 @@ strong {
   font-weight: 500;
 }
 
+.about {
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .thelius {
   font-size: 13px;
   font-family: 'Montserrat', sans-serif;

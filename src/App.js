@@ -29,9 +29,8 @@ class App extends Component {
         <MenuModal showModal={this.state.isPaneOpen} back={this.toggleMenu}>
           <ul onClick={this.toggleMenu} className="menu-links">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Me</Link></li>
             <li><Link to="/projects">Projects</Link></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="mailto:michael.w.mcdevitt@gmail.com">Contact</a></li>
           </ul>
         </MenuModal>
         <Header showModal={this.state.isPaneOpen} toggleMenu={this.toggleMenu}/>
