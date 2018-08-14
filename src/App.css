@@ -304,9 +304,9 @@ input {
     font-size: 18px;
   }
 
-  .content {
+  /* .content {
     flex-direction: column
-  }
+  } */
 
   .left {
     padding: 30px;
@@ -319,6 +319,7 @@ input {
 
   .right {
     width: 100%;
+    display: none;
   }
 
   .aside-modal {
